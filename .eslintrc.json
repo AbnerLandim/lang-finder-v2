@@ -19,7 +19,13 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "semi": ["error", "never"],
-    "jsx-quotes": ["error", "prefer-single"],
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
     "no-console": 0
   }
 }
