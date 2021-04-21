@@ -18,7 +18,7 @@ export const ContainerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   max-width: 640px;
   max-height: 400px;
   background: #3f3f3f;
@@ -30,7 +30,7 @@ export const ContainerBox = styled.div`
 export const Header = styled.header`
   display: flex;
   width: 90%;
-  margin: 32px 0px 32px;
+  margin-bottom: 32px;
   justify-content: center;
   align-items: center;
 `
@@ -61,11 +61,12 @@ export const InputContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 60%;
-  flex: 1;
+  margin-top: 24px;
+  min-width: 60%;
 `
 
 export const TextInput = styled.input`
+  border: none;
   background-color: #474747;
   border-top: 1px solid #585858;
   border-bottom: 1px solid #585858;
@@ -77,7 +78,6 @@ export const TextInput = styled.input`
   font-family: Roboto;
   color: #b6b6b6;
   padding: 6px;
-  height: 20px;
   flex: 1;
 `
 
@@ -86,13 +86,24 @@ export const SearchButton = styled.button`
   align-items: center;
   justify-content: center;
   background-color: #9d7aec;
-  border: none;
+  border: 1px solid #9d7aec;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding: 5px;
-  min-height: 20px;
   &:hover {
     filter: brightness(75%);
     transition: filter 0.4s;
   }
+`
+
+export const ContactDiv = styled.div`
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`
+
+export const ContactIcon = styled.a`
+  margin: 0px 8px;
 `
