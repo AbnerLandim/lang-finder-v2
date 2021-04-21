@@ -18,7 +18,7 @@ export const ContainerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   max-width: 640px;
   max-height: 400px;
   background: #3f3f3f;
@@ -30,7 +30,7 @@ export const ContainerBox = styled.div`
 export const Header = styled.header`
   display: flex;
   width: 90%;
-  margin: 32px 0px 32px;
+  margin-bottom: 32px;
   justify-content: center;
   align-items: center;
 `
@@ -53,4 +53,57 @@ export const SubtitleText = styled.span`
   font: 400 14px Roboto, sans-serif;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  width: 90%;
+`
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  min-width: 60%;
+`
+
+export const TextInput = styled.input`
+  border: none;
+  background-color: #474747;
+  border-top: 1px solid #585858;
+  border-bottom: 1px solid #585858;
+  border-left: 1px solid #585858;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Roboto;
+  color: #b6b6b6;
+  padding: 6px;
+  flex: 1;
+`
+
+export const SearchButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9d7aec;
+  border: 1px solid #9d7aec;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 5px;
+  &:hover {
+    filter: brightness(75%);
+    transition: filter 0.4s;
+  }
+`
+
+export const ContactDiv = styled.div`
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`
+
+export const ContactIcon = styled.a`
+  margin: 0px 8px;
 `
