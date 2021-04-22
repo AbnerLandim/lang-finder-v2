@@ -14,12 +14,11 @@ export const Container = styled.div`
 `
 
 export const ContainerBox = styled.div`
-  height: 80%;
+  height: 90%;
   width: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* min-height: 580px; */
   max-width: 660px;
   background: #3f3f3f;
   border-radius: 4px;
@@ -66,7 +65,7 @@ export const SubtitleDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 8px 0px 16px;
+  margin: 24px 0px 16px;
 `
 
 export const SubtitleText = styled.span`
@@ -84,7 +83,7 @@ export const ListContainer = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 12px;
+  border: 1px solid;
   margin: 0;
   width: 95%;
-  flex: 1;
 `

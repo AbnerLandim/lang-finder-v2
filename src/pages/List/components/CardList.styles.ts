@@ -11,7 +11,7 @@ export const RedirectContainer = styled.a`
 `
 
 export const TableItem = styled.li`
-  padding: 4px;
+  padding: 4px 8px;
   border-radius: 4px;
   border-bottom: 1px solid rgb(82, 82, 82);
   display: flex;

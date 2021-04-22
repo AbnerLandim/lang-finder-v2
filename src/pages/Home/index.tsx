@@ -3,7 +3,6 @@ import Loading from 'react-loading'
 import { useHistory } from 'react-router-dom'
 import { useLazyQuery } from '@apollo/client'
 import { GET_REPOSITORIES } from '../../services/RepositoryService'
-import { Repository } from '../../interfaces/Repository'
 import { FaSistrix, FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import {
   Container,
@@ -25,7 +24,6 @@ import parseSearchText from '../../helpers/parseSearchText'
 const Home: React.FC = () => {
   const PER_PAGE_DEFAULT = 8
   const [language, setLanguage] = useState('')
-  const [repoData, setRepoData] = useState<Repository[]>()
   const [noResult, setNoResult] = useState(false)
   const [getRepositories, { data, loading }] = useLazyQuery(GET_REPOSITORIES)
   const history = useHistory()
@@ -41,18 +39,15 @@ const Home: React.FC = () => {
         },
       },
     })
+    if (data?.getRepositories) {
+      setNoResult(false)
+    } else setNoResult(true)
   }
 
   useEffect(() => {
-    setRepoData(data?.getRepositories || {})
+    if (data?.getRepositories)
+      history.push('/list', { language: language, data: data?.getRepositories })
   }, [data])
-
-  useEffect(() => {
-    if (repoData?.length) {
-      setNoResult(false)
-      history.push('/list', { language: language, data: repoData })
-    } else setNoResult(true)
-  }, [repoData])
 
   return (
     <Container>
