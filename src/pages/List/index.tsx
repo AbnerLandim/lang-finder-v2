@@ -45,8 +45,6 @@ const List: React.FC = () => {
     })
   }, [page])
 
-  // useEffect(() => {}, [data])
-
   return (
     <Container>
       <ContainerBox>
