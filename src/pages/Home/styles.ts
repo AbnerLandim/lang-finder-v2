@@ -56,7 +56,7 @@ export const SubtitleText = styled.span`
   width: 90%;
 `
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,4 +106,12 @@ export const ContactDiv = styled.div`
 
 export const ContactIcon = styled.a`
   margin: 0px 8px;
+`
+
+export const NoResultText = styled.span`
+  color: #dfdfdf;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: Roboto;
+  margin: 10px 0px 10px;
 `
