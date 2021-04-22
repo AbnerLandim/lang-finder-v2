@@ -19,6 +19,7 @@ import {
   FooterLabel,
   FooterText,
   FooterButton,
+  LoadingContainer,
 } from './styles'
 import { Repository } from '../../interfaces/Repository'
 
@@ -62,12 +63,14 @@ const List: React.FC = () => {
         </SubtitleDiv>
         <ListContainer>
           {loading && (
-            <Loading
-              type={'spinningBubbles'}
-              color={'#ffffff'}
-              height={24}
-              width={24}
-            />
+            <LoadingContainer>
+              <Loading
+                type={'spinningBubbles'}
+                color={'#ffffff'}
+                height={24}
+                width={24}
+              />
+            </LoadingContainer>
           )}
           {!loading && (
             <CardList

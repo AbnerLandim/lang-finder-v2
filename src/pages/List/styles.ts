@@ -19,6 +19,7 @@ export const ContainerBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-height: 580px;
   max-width: 660px;
   background: #3f3f3f;
   border-radius: 4px;
@@ -123,4 +124,11 @@ export const FooterButton = styled.button`
     filter: brightness(75%);
     transition: filter 0.3s;
   }
+`
+
+export const LoadingContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
