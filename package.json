@@ -2,6 +2,11 @@
   "name": "lang-finder-v2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "5.7.3",
+    "node": "14.15.1",
+    "yarn": "1.22.10"
+  },
   "dependencies": {
     "@apollo/client": "^3.3.15",
     "@testing-library/jest-dom": "^5.11.4",

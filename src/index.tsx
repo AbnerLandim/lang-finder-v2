@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/client/react'
 import App from './App'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: 'https://lang-finder-v2-api.herokuapp.com/graphql',
   cache: new InMemoryCache(),
 })
 
