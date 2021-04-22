@@ -82,11 +82,9 @@ const List: React.FC = () => {
           <FooterButton onClick={() => setPage(page - 1)} disabled={page < 2}>
             Prev
           </FooterButton>
-          {!loading && (
-            <FooterLabel>
-              <FooterText>{page}</FooterText>
-            </FooterLabel>
-          )}
+          <FooterLabel>
+            <FooterText>{page}</FooterText>
+          </FooterLabel>
           <FooterButton onClick={() => setPage(page + 1)} disabled={loading}>
             Next
           </FooterButton>

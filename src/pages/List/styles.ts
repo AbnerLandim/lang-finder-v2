@@ -19,6 +19,7 @@ export const ContainerBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
   max-height: 580px;
   max-width: 660px;
   background: #3f3f3f;
@@ -39,7 +40,7 @@ export const HeaderText = styled.span`
   color: #dfdfdf;
   font-size: 36px;
   font-family: Roboto;
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
 `
 
@@ -51,6 +52,7 @@ export const BackButton = styled(Link)`
   position: absolute;
   left: 0;
   margin-left: 15px;
+  text-decoration: none;
 `
 
 export const BackButtonText = styled.span`
@@ -58,7 +60,6 @@ export const BackButtonText = styled.span`
   font-weight: 500;
   font-size: 18px;
   font-family: Roboto;
-  text-decoration: none;
 `
 
 export const SubtitleDiv = styled.div`
@@ -94,7 +95,9 @@ export const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
-  margin-top: 16px;
+  position: absolute;
+  bottom: 0;
+  margin: 16px 0px;
 `
 
 export const FooterLabel = styled.footer`

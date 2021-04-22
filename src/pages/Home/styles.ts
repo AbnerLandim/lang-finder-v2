@@ -35,10 +35,28 @@ export const Header = styled.header`
   align-items: center;
 `
 
+export const TitleBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 20px;
+  justify-content: flex-end;
+`
+
 export const HeaderTitle = styled.span`
   color: #a384ec;
-  margin-left: 20px;
   font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  font-family: Roboto;
+  -webkit-font-smoothing: antialiased;
+`
+
+export const AppVersionText = styled.span`
+  color: #fff;
+  margin-left: 8px;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 700;
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;

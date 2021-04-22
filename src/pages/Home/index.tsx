@@ -9,7 +9,9 @@ import {
   SubtitleText,
   ContainerBox,
   Header,
+  TitleBox,
   HeaderTitle,
+  AppVersionText,
   LogoImage,
   InputContainer,
   TextInput,
@@ -54,7 +56,10 @@ const Home: React.FC = () => {
       <ContainerBox>
         <Header>
           <LogoImage src={Logo} alt="lang-finder" />
-          <HeaderTitle>Lang Finder</HeaderTitle>
+          <TitleBox>
+            <HeaderTitle>Lang Finder</HeaderTitle>
+            <AppVersionText>v2</AppVersionText>
+          </TitleBox>
         </Header>
         <SubtitleText>
           {`Search for any language you'd like to see projects about, so we can
