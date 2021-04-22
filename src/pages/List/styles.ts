@@ -83,7 +83,44 @@ export const ListContainer = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 12px;
-  border: 1px solid;
   margin: 0;
   width: 95%;
+`
+
+export const FooterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 16px;
+`
+
+export const FooterLabel = styled.footer`
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 2px;
+  background-color: #444444;
+`
+
+export const FooterText = styled.span`
+  font-weight: bold;
+  font-family: Roboto;
+  color: #939393;
+`
+
+export const FooterButton = styled.button`
+  border: none;
+  color: white;
+  font-family: Roboto;
+  font-weight: bold;
+  background-color: #797979;
+  border-radius: 2px;
+  padding: 10px;
+  &:hover {
+    filter: brightness(75%);
+    transition: filter 0.3s;
+  }
 `
