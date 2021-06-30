@@ -20,7 +20,7 @@ export const ContainerBox = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  max-height: 580px;
+  height: 624px;
   max-width: 660px;
   background: #3f3f3f;
   border-radius: 4px;
@@ -34,6 +34,9 @@ export const Header = styled.header`
   position: relative;
   width: 100%;
   margin-top: 30px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 export const HeaderText = styled.span`
@@ -53,6 +56,10 @@ export const BackButton = styled(Link)`
   left: 0;
   margin-left: 15px;
   text-decoration: none;
+  @media (max-width: 600px) {
+    position: relative;
+    margin: 0;
+  }
 `
 
 export const BackButtonText = styled.span`

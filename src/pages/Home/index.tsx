@@ -4,38 +4,25 @@ import { useHistory } from 'react-router-dom'
 import { useLazyQuery } from '@apollo/client'
 import { GET_REPOSITORIES } from '../../services/RepositoryService'
 import { FaSistrix, FaGithubAlt, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import {
-  Container,
-  SubtitleText,
-  ContainerBox,
-  Header,
-  TitleBox,
-  HeaderTitle,
-  AppVersionText,
-  LogoImage,
-  InputContainer,
-  TextInput,
-  SearchButton,
-  ContactDiv,
-  ContactIcon,
-  NoResultText,
-} from './styles'
-import Logo from '../../assets/github-logo.svg'
+
 import parseSearchText from '../../helpers/parseSearchText'
+import Logo from '../../assets/github-logo.svg'
+
+import * as S from './styles'
 
 const Home: React.FC = () => {
   const PER_PAGE_DEFAULT = 8
-  const [language, setLanguage] = useState('')
   const [noResult, setNoResult] = useState(false)
   const [getRepositories, { data, loading }] = useLazyQuery(GET_REPOSITORIES)
   const history = useHistory()
 
   const search = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const searchText = parseSearchText(document.forms?.[0]?.langInput?.value)
     getRepositories({
       variables: {
         input: {
-          language: language,
+          language: searchText,
           page: 1,
           perPage: PER_PAGE_DEFAULT,
         },
@@ -47,58 +34,62 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
+    const language = parseSearchText(document.forms?.[0]?.langInput?.value)
     if (data?.getRepositories)
-      history.push('/list', { language: language, data: data?.getRepositories })
+      history.push('/list', {
+        language,
+        data: data?.getRepositories,
+      })
   }, [data])
 
   return (
-    <Container>
-      <ContainerBox>
-        <Header>
-          <LogoImage src={Logo} alt="lang-finder" />
-          <TitleBox>
-            <HeaderTitle>Lang Finder</HeaderTitle>
-            <AppVersionText>v2</AppVersionText>
-          </TitleBox>
-        </Header>
-        <SubtitleText>
+    <S.Container>
+      <S.ContainerBox>
+        <S.Header>
+          <S.LogoImage src={Logo} alt="lang-finder" />
+          <S.TitleBox>
+            <S.HeaderTitle>Lang Finder</S.HeaderTitle>
+            <S.AppVersionText>v2</S.AppVersionText>
+          </S.TitleBox>
+        </S.Header>
+        <S.SubtitleText>
           {`Search for any language you'd like to see projects about, so we can
           show you repositories containing them.`}
-        </SubtitleText>
-        <InputContainer onSubmit={(e) => search(e)}>
-          <TextInput
+        </S.SubtitleText>
+        <S.InputContainer onSubmit={(e) => search(e)}>
+          <S.TextInput
+            name="langInput"
             placeholder="Search language..."
-            onChange={(e) => setLanguage(parseSearchText(e.target.value))}
             required
             autoFocus
           />
-          <SearchButton type="submit">
+          <S.SearchButton type="submit">
             <FaSistrix size={18} color="#ffffff" />
-          </SearchButton>
-        </InputContainer>
-        <ContactDiv>
-          <ContactIcon
+          </S.SearchButton>
+        </S.InputContainer>
+        <S.ContactDiv>
+          <S.ContactIcon
             href="https://github.com/AbnerLandim"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithubAlt size={18} color="#000000" />
-          </ContactIcon>
-          <ContactIcon
+          </S.ContactIcon>
+          <S.ContactIcon
             href="https://www.linkedin.com/in/abner-landim-siqueira"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin size={18} color="#000000" />
-          </ContactIcon>
-          <ContactIcon
+          </S.ContactIcon>
+          <S.ContactIcon
             href="mailto:abner.landim340@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaEnvelope size={18} color="#000000" />
-          </ContactIcon>
-        </ContactDiv>
+          </S.ContactIcon>
+        </S.ContactDiv>
         {loading && (
           <Loading
             type={'spinningBubbles'}
@@ -107,11 +98,11 @@ const Home: React.FC = () => {
             width={24}
           />
         )}
-        {noResult && (
-          <NoResultText>There is no match for your search.</NoResultText>
+        {noResult && !loading && (
+          <S.NoResultText>There is no match for your search.</S.NoResultText>
         )}
-      </ContainerBox>
-    </Container>
+      </S.ContainerBox>
+    </S.Container>
   )
 }
 

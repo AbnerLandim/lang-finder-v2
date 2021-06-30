@@ -20,7 +20,7 @@ export const ContainerBox = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 640px;
-  max-height: 400px;
+  height: 400px;
   background: #3f3f3f;
   border-radius: 4px;
   padding: 12px;
@@ -97,6 +97,9 @@ export const TextInput = styled.input`
   color: #b6b6b6;
   padding: 6px;
   flex: 1;
+  &:focus {
+    outline: none;
+  }
 `
 
 export const SearchButton = styled.button`
