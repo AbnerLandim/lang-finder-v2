@@ -3,25 +3,12 @@ import { FiArrowLeft } from 'react-icons/fi'
 import Loading from 'react-loading'
 import { useLocation } from 'react-router-dom'
 import { useLazyQuery } from '@apollo/client'
+
 import { GET_REPOSITORIES } from '../../services/RepositoryService'
 import CardList from './components/CardList'
-import {
-  Container,
-  ContainerBox,
-  Header,
-  HeaderText,
-  BackButton,
-  SubtitleDiv,
-  BackButtonText,
-  SubtitleText,
-  ListContainer,
-  FooterContainer,
-  FooterLabel,
-  FooterText,
-  FooterButton,
-  LoadingContainer,
-} from './styles'
 import { Repository } from '../../interfaces/Repository'
+
+import * as S from './styles'
 
 type RouteProps = {
   language: string
@@ -47,50 +34,52 @@ const List: React.FC = () => {
   }, [page])
 
   return (
-    <Container>
-      <ContainerBox>
-        <Header>
-          <BackButton to="/">
+    <S.Container>
+      <S.ContainerBox>
+        <S.Header>
+          <S.BackButton to="/">
             <FiArrowLeft size={18} color="#A888C3" />
-            <BackButtonText>Back</BackButtonText>
-          </BackButton>
-          <HeaderText style={{ color: '#9a63c7' }}>{`<`}</HeaderText>
-          <HeaderText>{(state as RouteProps)?.language}</HeaderText>
-          <HeaderText style={{ color: '#9a63c7' }}>{`>`}</HeaderText>
-        </Header>
-        <SubtitleDiv>
-          <SubtitleText>Repositories:</SubtitleText>
-        </SubtitleDiv>
-        <ListContainer>
+            <S.BackButtonText>Back</S.BackButtonText>
+          </S.BackButton>
+          <div>
+            <S.HeaderText style={{ color: '#9a63c7' }}>{`<`}</S.HeaderText>
+            <S.HeaderText>{(state as RouteProps)?.language}</S.HeaderText>
+            <S.HeaderText style={{ color: '#9a63c7' }}>{`>`}</S.HeaderText>
+          </div>
+        </S.Header>
+        <S.SubtitleDiv>
+          <S.SubtitleText>Repositories:</S.SubtitleText>
+        </S.SubtitleDiv>
+        <S.ListContainer>
           {loading && (
-            <LoadingContainer>
+            <S.LoadingContainer>
               <Loading
                 type={'spinningBubbles'}
                 color={'#ffffff'}
                 height={24}
                 width={24}
               />
-            </LoadingContainer>
+            </S.LoadingContainer>
           )}
           {!loading && (
             <CardList
               data={data?.getRepositories ?? (state as RouteProps)?.data}
             />
           )}
-        </ListContainer>
-        <FooterContainer>
-          <FooterButton onClick={() => setPage(page - 1)} disabled={page < 2}>
+        </S.ListContainer>
+        <S.FooterContainer>
+          <S.FooterButton onClick={() => setPage(page - 1)} disabled={page < 2}>
             Prev
-          </FooterButton>
-          <FooterLabel>
-            <FooterText>{page}</FooterText>
-          </FooterLabel>
-          <FooterButton onClick={() => setPage(page + 1)} disabled={loading}>
+          </S.FooterButton>
+          <S.FooterLabel>
+            <S.FooterText>{page}</S.FooterText>
+          </S.FooterLabel>
+          <S.FooterButton onClick={() => setPage(page + 1)} disabled={loading}>
             Next
-          </FooterButton>
-        </FooterContainer>
-      </ContainerBox>
-    </Container>
+          </S.FooterButton>
+        </S.FooterContainer>
+      </S.ContainerBox>
+    </S.Container>
   )
 }
 
