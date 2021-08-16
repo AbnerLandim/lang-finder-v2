@@ -15,8 +15,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@types/styled-components": "^5.1.9",
     "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "graphql": "^15.5.0",
@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "npx cypress run-ct",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -56,7 +56,12 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.9.4",
+    "@cypress/webpack-dev-server": "^1.4.0",
+    "cypress": "^8.3.0",
+    "cypress-react-unit-test": "^4.17.2",
     "eslint": "^7.24.0",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-plugin-react": "^7.23.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

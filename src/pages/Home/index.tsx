@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Loading from 'react-loading'
 import { useHistory } from 'react-router-dom'
 import { useLazyQuery } from '@apollo/client'
